@@ -1,13 +1,21 @@
+import 'babel-polyfill';
 import { expect } from 'chai';
 import sinon from 'sinon';
+import EcbService from '../../../src/services/ecbService';
+import ConvertService from '../../../src/services/convertService';
 
-describe('Presenter - Convert', () => {
+describe('ServicesConvert', () => {
   describe('When receiving payload', () => {
-    it('should contact the ECB', async () => {
-      const api = new ecbService();
-      sinon.stub(api, 'getExchangeRates', fakeExchangeRates);
+    it('should contact the ECB to convert', async () => {
+      const api = new EcbService();
+      sinon.stub(api, 'getExchangeRates', () => fakeExchangeRates);
       const service = new ConvertService(api);
-      service.convert({ from: 'EUR', to: 'USD', value: 100 });
+      const expectedValue = service.convert({ from: 'EUR', to: 'USD', value: 100 });
+
+      expect(expectedValue).to.have.property('from', 'EUR');
+      expect(expectedValue).to.have.property('to', 'USD');
+      expect(expectedValue).to.have.property('original', 100);
+      expect(expectedValue).to.have.property('converted', 106.73);
     });
   });
 });
