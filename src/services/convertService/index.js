@@ -20,15 +20,18 @@ const getRate = (api, payload) => {
   const rates = api.getExchangeRates();
 
   if (payload.from === 'EUR') {
-    return rates.find(el => el.currency === payload.to).rate;
+    return getRateTo(rates, payload.to);
   }
 
   if (payload.to === 'EUR') {
-    return rateBase / rates.find(el => el.currency === payload.from).rate;
+    return rateBase / getRateFrom(rates, payload.from);
   }
 
-  const rateFrom = rates.find(el => el.currency === payload.from).rate;
-  const rateTo = rates.find(el => el.currency === payload.to).rate;
+  const rateFrom = getRateFrom(rates, payload.from);
+  const rateTo = getRateTo(rates, payload.to);
 
   return rateTo * (rateBase / rateFrom);
 };
+
+const getRateFrom = (rates, from) => rates.find(el => el.currency === from).rate;
+const getRateTo = (rates, to) => rates.find(el => el.currency === to).rate;
