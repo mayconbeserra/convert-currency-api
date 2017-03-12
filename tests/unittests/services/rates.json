@@ -1,0 +1,175 @@
+{
+    "gesmes:Envelope": {
+        "$": {
+            "xmlns:gesmes": "http://www.gesmes.org/xml/2002-08-01",
+            "xmlns": "http://www.ecb.int/vocabulary/2002-08-01/eurofxref"
+        },
+        "gesmes:subject": ["Reference rates"],
+        "gesmes:Sender": [{
+            "gesmes:name": ["European Central Bank"]
+        }],
+        "Cube": [{
+            "Cube": [{
+                "$": {
+                    "time": "2017-03-10"
+                },
+                "Cube": [{
+                    "$": {
+                        "currency": "USD",
+                        "rate": "1.0606"
+                    }
+                }, {
+                    "$": {
+                        "currency": "JPY",
+                        "rate": "122.42"
+                    }
+                }, {
+                    "$": {
+                        "currency": "BGN",
+                        "rate": "1.9558"
+                    }
+                }, {
+                    "$": {
+                        "currency": "CZK",
+                        "rate": "27.021"
+                    }
+                }, {
+                    "$": {
+                        "currency": "DKK",
+                        "rate": "7.4331"
+                    }
+                }, {
+                    "$": {
+                        "currency": "GBP",
+                        "rate": "0.87250"
+                    }
+                }, {
+                    "$": {
+                        "currency": "HUF",
+                        "rate": "312.27"
+                    }
+                }, {
+                    "$": {
+                        "currency": "PLN",
+                        "rate": "4.3259"
+                    }
+                }, {
+                    "$": {
+                        "currency": "RON",
+                        "rate": "4.5490"
+                    }
+                }, {
+                    "$": {
+                        "currency": "SEK",
+                        "rate": "9.5778"
+                    }
+                }, {
+                    "$": {
+                        "currency": "CHF",
+                        "rate": "1.0743"
+                    }
+                }, {
+                    "$": {
+                        "currency": "NOK",
+                        "rate": "9.1405"
+                    }
+                }, {
+                    "$": {
+                        "currency": "HRK",
+                        "rate": "7.4190"
+                    }
+                }, {
+                    "$": {
+                        "currency": "RUB",
+                        "rate": "62.6964"
+                    }
+                }, {
+                    "$": {
+                        "currency": "TRY",
+                        "rate": "3.9801"
+                    }
+                }, {
+                    "$": {
+                        "currency": "AUD",
+                        "rate": "1.4095"
+                    }
+                }, {
+                    "$": {
+                        "currency": "BRL",
+                        "rate": "3.3694"
+                    }
+                }, {
+                    "$": {
+                        "currency": "CAD",
+                        "rate": "1.4322"
+                    }
+                }, {
+                    "$": {
+                        "currency": "CNY",
+                        "rate": "7.3336"
+                    }
+                }, {
+                    "$": {
+                        "currency": "HKD",
+                        "rate": "8.2367"
+                    }
+                }, {
+                    "$": {
+                        "currency": "IDR",
+                        "rate": "14185.77"
+                    }
+                }, {
+                    "$": {
+                        "currency": "ILS",
+                        "rate": "3.9086"
+                    }
+                }, {
+                    "$": {
+                        "currency": "INR",
+                        "rate": "70.6725"
+                    }
+                }, {
+                    "$": {
+                        "currency": "KRW",
+                        "rate": "1226.28"
+                    }
+                }, {
+                    "$": {
+                        "currency": "MXN",
+                        "rate": "20.9681"
+                    }
+                }, {
+                    "$": {
+                        "currency": "MYR",
+                        "rate": "4.7231"
+                    }
+                }, {
+                    "$": {
+                        "currency": "NZD",
+                        "rate": "1.5348"
+                    }
+                }, {
+                    "$": {
+                        "currency": "PHP",
+                        "rate": "53.281"
+                    }
+                }, {
+                    "$": {
+                        "currency": "SGD",
+                        "rate": "1.5041"
+                    }
+                }, {
+                    "$": {
+                        "currency": "THB",
+                        "rate": "37.556"
+                    }
+                }, {
+                    "$": {
+                        "currency": "ZAR",
+                        "rate": "14.0681"
+                    }
+                }]
+            }]
+        }]
+    }
+}
