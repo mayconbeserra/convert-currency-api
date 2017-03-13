@@ -14,7 +14,7 @@ describe('ECB Service', () => {
 
       const service = new EcbService(api, '');
 
-      const expectedValue = service.getExchangeRates();
+      const expectedValue = await service.getExchangeRates();
 
       expect(expectedValue[0]).to.have.property('currency', 'USD');
       expect(expectedValue[0]).to.have.property('rate', '1.0606');

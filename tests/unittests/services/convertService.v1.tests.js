@@ -9,8 +9,8 @@ describe('ServicesConvert', () => {
     it('should contact the ECB to convert when its EURO', async () => {
       const api = new EcbService();
       sinon.stub(api, 'getExchangeRates', () => fakeExchangeRates);
-      const service = new ConvertService(api);
-      const expectedValue = service.convert({ from: 'EUR', to: 'USD', value: 100 });
+      const service = new ConvertService({ service: api });
+      const expectedValue = await service.convert({ from: 'EUR', to: 'USD', value: 100 });
 
       expect(expectedValue).to.have.property('from', 'EUR');
       expect(expectedValue).to.have.property('to', 'USD');
@@ -21,8 +21,8 @@ describe('ServicesConvert', () => {
     it('should contact the ECB to convert from USD to EUR', async () => {
       const api = new EcbService();
       sinon.stub(api, 'getExchangeRates', () => fakeExchangeRates);
-      const service = new ConvertService(api);
-      const expectedValue = service.convert({ from: 'USD', to: 'EUR', value: 100 });
+      const service = new ConvertService({ service: api });
+      const expectedValue = await service.convert({ from: 'USD', to: 'EUR', value: 100 });
 
       expect(expectedValue).to.have.property('from', 'USD');
       expect(expectedValue).to.have.property('to', 'EUR');
@@ -33,8 +33,8 @@ describe('ServicesConvert', () => {
     it('should contact the ECB to convert from BRL to USD', async () => {
       const api = new EcbService();
       sinon.stub(api, 'getExchangeRates', () => fakeExchangeRates);
-      const service = new ConvertService(api);
-      const expectedValue = service.convert({ from: 'BRL', to: 'USD', value: 100 });
+      const service = new ConvertService({ service: api });
+      const expectedValue = await service.convert({ from: 'BRL', to: 'USD', value: 100 });
 
       expect(expectedValue).to.have.property('from', 'BRL');
       expect(expectedValue).to.have.property('to', 'USD');

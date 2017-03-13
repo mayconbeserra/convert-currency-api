@@ -1,23 +1,23 @@
-export default function (api) {
+export default function (ecbService) {
   return {
-    convert: convert.bind(this, api),
+    convert: convert.bind(this, ecbService),
   };
 }
 
-const convert = (api, payload) => {
-  const convertedValue = payload.value * getRate(api, payload);
+const convert = async (ecbService, payload) => {
+  const converted = payload.value * await getRate(ecbService.service, payload);
 
   return {
     from: payload.from,
     to: payload.to,
     original: payload.value,
-    converted: convertedValue,
+    converted,
   };
 };
 
-const getRate = (api, payload) => {
+const getRate = async (ecbService, payload) => {
   const rateBase = 1;
-  const rates = api.getExchangeRates();
+  const rates = await ecbService.getExchangeRates();
 
   if (payload.from === 'EUR') {
     return getRateTo(rates, payload.to);

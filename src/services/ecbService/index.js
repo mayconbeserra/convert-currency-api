@@ -1,14 +1,15 @@
 import jp from 'jsonpath';
 
-export default function (api, url) {
+export default function base (api) {
   return {
-    getExchangeRates: getRates.bind(this, api, url),
+    getExchangeRates: getExchangeRates.bind(this, api),
   };
 }
 
-const getRates = (api) => {
-  const xml = api.get();
-  const data = jp.query(JSON.parse(xml), '$..Cube[*].Cube[*].Cube');
+const getExchangeRates = async (api) => {
+  const xml = await api.get();
+  const data = await jp.query(JSON.parse(xml), '$..Cube[*].Cube[*].Cube');
+
   const result = data[0].map((el) => {
     return {
       currency: el.$.currency,
