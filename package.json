@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js --ext .jsx src/",
     "compile": "babel --presets es2015,stage-0 -d lib/ src/",
     "server:build": "babel src/ --out-dir lib",
-    "server:test": "export NODE_ENV=test && npm run compile && mocha --compilers js:babel-core/register --recursive --watch-extensions .spec.js ./tests",
+    "server:test": "export NODE_ENV=test && npm install && npm run compile && mocha --compilers js:babel-core/register --recursive --watch-extensions .spec.js ./tests",
     "test:watch": "npm run test -- --watch --bail ./tests"
   },
   "repository": {
