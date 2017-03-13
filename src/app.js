@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import api from './api';
+import errors from './middleware/errors';
 
 export async function application () {
   const app = express();
@@ -9,6 +10,7 @@ export async function application () {
   app.use(bodyParser.json());
   app.use(expressValidator());
   api(app);
+  app.use(errors);
 
   return app;
 }
