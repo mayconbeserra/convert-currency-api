@@ -22,6 +22,11 @@ It's based on ECB (European Central Bank).
 * GET
 ** `localhost:3000/_ping`
 
+# Requirements
+
+* Docker version 17.03.0-ce, build 60ccb22
+* Node v7.7.1
+
 # How to run the tests?
 
 * `docker-compose stop`

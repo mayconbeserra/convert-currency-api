@@ -3,7 +3,7 @@ version: '2.1'
 services:
   local:
     image: node:7.7.1-onbuild
-    command: bash -c "npm run server:dev"
+    command: bash -c "npm run docker:dev"
     volumes:
       - .:/usr/src/app
     ports:
@@ -14,7 +14,7 @@ services:
 
   ci:
     build: .
-    command: npm run server:test
+    command: npm run docker:test
     volumes:
       - ./:/usr/src/app
     ports:
